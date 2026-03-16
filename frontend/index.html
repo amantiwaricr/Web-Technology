@@ -1,91 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faculty Management System - Login Portal for Evergreen University">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Faculty Management System - Login Portal for Evergreen University"
+    />
     <title>Login | Faculty Management System</title>
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Top Bar -->
     <header>
+      <div>
         <div>
-            <div>
-                <span>EU</span>
-            </div>
-            <div>
-                <span>Evergreen University</span>
-                <br>
-                <span>Faculty Management System</span>
-            </div>
+          <span>EU</span>
         </div>
         <div>
-            Need Help? <span>Contact IT Support</span>
+          <span>Evergreen University</span>
+          <br />
+          <span>Faculty Management System</span>
         </div>
+      </div>
+      <div>Need Help? <span>Contact IT Support</span></div>
     </header>
 
     <!-- Main Login Area -->
     <main>
+      <div>
+        <!-- Left Panel - Welcome -->
         <div>
-
-            <!-- Left Panel - Welcome -->
-            <div>
-                <div>
-                    <span>EU</span>
-                </div>
-                <h1>Welcome Back!</h1>
-                <p>
-                    Access your faculty dashboard to manage schedules, track attendance, view class assignments, and stay connected with your academic community.
-                </p>
-                <div>
-                    <p>&#9679; Manage your weekly schedule</p>
-                    <p>&#9679; Track student attendance</p>
-                    <p>&#9679; View faculty directory</p>
-                    <p>&#9679; Update your profile</p>
-                </div>
-            </div>
-
-            <!-- Right Panel - Login Form -->
-            <div>
-                <h2>Faculty Login</h2>
-                <p>Enter your credentials to access the portal</p>
-
-                <form action="login.php" method="POST">
-                    <label for="faculty-id">Faculty ID</label>
-                    <input type="text" id="faculty-id" name="faculty_id" placeholder="e.g., FAC-2024-001">
-
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password">
-
-                    <div>
-                        <label>
-                            <input type="checkbox" id="remember-me" name="remember_me">
-                            Remember Me
-                        </label>
-                        <a href="#">Forgot Password?</a>
-                    </div>
-
-                    <button type="submit">
-                        Sign In &#10132;
-                    </button>
-                </form>
-
-                <div>
-                    <p>Academic Year 2025-2026</p>
-                    <p>Semester: Spring 2026</p>
-                </div>
-            </div>
+          <div>
+            <span>EU</span>
+          </div>
+          <h1>Welcome Back!</h1>
+          <p>
+            Access your faculty dashboard to manage schedules, track attendance,
+            view class assignments, and stay connected with your academic
+            community.
+          </p>
+          <div>
+            <p>&#9679; Manage your weekly schedule</p>
+            <p>&#9679; Track student attendance</p>
+            <p>&#9679; View faculty directory</p>
+            <p>&#9679; Update your profile</p>
+          </div>
         </div>
+
+        <!-- Right Panel - Login Form -->
+        <div>
+          <h2>Faculty Login</h2>
+          <p>Enter your credentials to access the portal</p>
+
+          <form action="login.php" method="POST">
+            <label for="faculty-id">Faculty ID</label>
+            <input
+              type="text"
+              id="faculty-id"
+              name="faculty_id"
+              placeholder="e.g., FAC-2024-001"
+            />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+
+            <div>
+              <label>
+                <input type="checkbox" id="remember-me" name="remember_me" />
+                Remember Me
+              </label>
+              <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit">Sign In &#10132;</button>
+          </form>
+
+          <div>
+            <p>Academic Year 2025-2026</p>
+            <p>Semester: Spring 2026</p>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Evergreen University. All Rights Reserved.</p>
-        <p>
-            Contact IT Support: <span>itsupport@evergreen.edu</span> &nbsp;|&nbsp; Phone: +1 (555) 234-5678 &nbsp;|&nbsp; Campus: 1200 Academic Drive, Springfield
-        </p>
+      <p>&copy; 2026 Evergreen University. All Rights Reserved.</p>
+      <p>
+        Contact IT Support: <span>itsupport@evergreen.edu</span> &nbsp;|&nbsp;
+        Phone: +1 (555) 234-5678 &nbsp;|&nbsp; Campus: 1200 Academic Drive,
+        Springfield
+      </p>
     </footer>
-
-</body>
+  </body>
 </html>

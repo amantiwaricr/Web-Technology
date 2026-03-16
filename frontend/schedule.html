@@ -1,342 +1,348 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faculty Weekly Schedule - Evergreen University Faculty Management System">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Faculty Weekly Schedule - Evergreen University Faculty Management System"
+    />
     <title>Schedule | Faculty Management System</title>
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Top Navigation Bar -->
     <header>
+      <div>
         <div>
-            <div>
-                <div>
-                    <span>EU</span>
-                </div>
-                <span>Faculty Management System</span>
-            </div>
-            <div>
-                <span>Welcome, Dr. Sarah Mitchell</span>
-                <div>
-                    <span>SM</span>
-                </div>
-            </div>
+          <div>
+            <span>EU</span>
+          </div>
+          <span>Faculty Management System</span>
         </div>
-        <nav>
-            <div>
-                <a href="dashboard.html">&#9776; Dashboard</a>
-                <a href="schedule.html">&#128197; Schedule</a>
-                <a href="attendance.html">&#9745; Attendance</a>
-                <a href="faculty-details.html">&#128101; Faculty List</a>
-                <a href="profile.html">&#128100; Profile</a>
-                <a href="index.html">&#10140; Logout</a>
-            </div>
-        </nav>
+        <div>
+          <span>Welcome, Dr. Sarah Mitchell</span>
+          <div>
+            <span>SM</span>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div>
+          <a href="dashboard.html">&#9776; Dashboard</a>
+          <a href="schedule.html">&#128197; Schedule</a>
+          <a href="attendance.html">&#9745; Attendance</a>
+          <a href="faculty-details.html">&#128101; Faculty List</a>
+          <a href="profile.html">&#128100; Profile</a>
+          <a href="index.html">&#10140; Logout</a>
+        </div>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main>
+      <!-- Breadcrumb -->
+      <nav>
+        <span>
+          <a href="dashboard.html">Home</a>
+          <span>&#9656;</span>
+          <span>Weekly Schedule</span>
+        </span>
+      </nav>
 
-        <!-- Breadcrumb -->
-        <nav>
-            <span>
-                <a href="dashboard.html">Home</a>
-                <span>&#9656;</span>
-                <span>Weekly Schedule</span>
-            </span>
-        </nav>
-
-        <!-- Page Title & Filter -->
+      <!-- Page Title & Filter -->
+      <div>
         <div>
-            <div>
-                <h1>Faculty Weekly Schedule</h1>
-                <p>Spring 2026 &mdash; Week of March 9 - March 15, 2026</p>
-            </div>
-            <div>
-                <div>
-                    <label for="filter-faculty">Filter by Faculty</label>
-                    <select id="filter-faculty">
-                        <option>Dr. Sarah Mitchell</option>
-                        <option>Dr. James Peterson</option>
-                        <option>Prof. Emily Carter</option>
-                        <option>Dr. Raj Patel</option>
-                        <option>Prof. Lisa Wang</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="filter-week">Select Week</label>
-                    <input type="week" id="filter-week" value="2026-W11">
-                </div>
-            </div>
+          <h1>Faculty Weekly Schedule</h1>
+          <p>Spring 2026 &mdash; Week of March 9 - March 15, 2026</p>
         </div>
+        <div>
+          <div>
+            <label for="filter-faculty">Filter by Faculty</label>
+            <select id="filter-faculty">
+              <option>Dr. Sarah Mitchell</option>
+              <option>Dr. James Peterson</option>
+              <option>Prof. Emily Carter</option>
+              <option>Dr. Raj Patel</option>
+              <option>Prof. Lisa Wang</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-week">Select Week</label>
+            <input type="week" id="filter-week" value="2026-W11" />
+          </div>
+        </div>
+      </div>
 
-        <!-- Legend -->
-        <section>
-            <div>
-                <span></span>
-                <span>Completed</span>
-            </div>
-            <div>
-                <span></span>
-                <span>Scheduled</span>
-            </div>
-            <div>
-                <span></span>
-                <span>In Progress</span>
-            </div>
-            <div>
-                <span></span>
-                <span>Cancelled</span>
-            </div>
-        </section>
+      <!-- Legend -->
+      <section>
+        <div>
+          <span></span>
+          <span>Completed</span>
+        </div>
+        <div>
+          <span></span>
+          <span>Scheduled</span>
+        </div>
+        <div>
+          <span></span>
+          <span>In Progress</span>
+        </div>
+        <div>
+          <span></span>
+          <span>Cancelled</span>
+        </div>
+      </section>
 
-        <!-- Weekly Timetable -->
-        <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Time Slot</th>
-                        <th>Monday<br><span>Mar 9</span></th>
-                        <th>Tuesday<br><span>Mar 10</span></th>
-                        <th>Wednesday<br><span>Mar 11</span></th>
-                        <th>Thursday<br><span>Mar 12</span></th>
-                        <th>Friday<br><span>Mar 13</span></th>
-                        <th>Saturday<br><span>Mar 14</span></th>
-                        <th>Sunday<br><span>Mar 15</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 8:00 - 9:00 AM -->
-                    <tr>
-                        <td>8:00&ndash;9:00 AM</td>
-                        <td>
-                            <div>
-                                <p>Data Structures</p>
-                                <p>CS-301 A &bull; Room 204</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Data Structures</p>
-                                <p>CS-301 A &bull; Room 204</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Data Structures</p>
-                                <p>CS-301 A &bull; Lab 101</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+      <!-- Weekly Timetable -->
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Time Slot</th>
+              <th>Monday<br /><span>Mar 9</span></th>
+              <th>Tuesday<br /><span>Mar 10</span></th>
+              <th>Wednesday<br /><span>Mar 11</span></th>
+              <th>Thursday<br /><span>Mar 12</span></th>
+              <th>Friday<br /><span>Mar 13</span></th>
+              <th>Saturday<br /><span>Mar 14</span></th>
+              <th>Sunday<br /><span>Mar 15</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 8:00 - 9:00 AM -->
+            <tr>
+              <td>8:00&ndash;9:00 AM</td>
+              <td>
+                <div>
+                  <p>Data Structures</p>
+                  <p>CS-301 A &bull; Room 204</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Data Structures</p>
+                  <p>CS-301 A &bull; Room 204</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Data Structures</p>
+                  <p>CS-301 A &bull; Lab 101</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 9:00 - 10:00 AM -->
-                    <tr>
-                        <td>9:00&ndash;10:00 AM</td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Database Systems</p>
-                                <p>CS-302 A &bull; Room 305</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Database Systems</p>
-                                <p>CS-302 A &bull; Room 305</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+            <!-- 9:00 - 10:00 AM -->
+            <tr>
+              <td>9:00&ndash;10:00 AM</td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Database Systems</p>
+                  <p>CS-302 A &bull; Room 305</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Database Systems</p>
+                  <p>CS-302 A &bull; Room 305</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 10:00 - 11:00 AM -->
-                    <tr>
-                        <td>10:00&ndash;11:00 AM</td>
-                        <td>
-                            <div>
-                                <p>Algorithm Design</p>
-                                <p>CS-405 B &bull; Room 312</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Algorithm Design</p>
-                                <p>CS-405 B &bull; Room 312</p>
-                                <span>&#9203; In Progress</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Algorithm Design</p>
-                                <p>CS-405 B &bull; Room 312</p>
-                                <span>&#128339; Scheduled</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+            <!-- 10:00 - 11:00 AM -->
+            <tr>
+              <td>10:00&ndash;11:00 AM</td>
+              <td>
+                <div>
+                  <p>Algorithm Design</p>
+                  <p>CS-405 B &bull; Room 312</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Algorithm Design</p>
+                  <p>CS-405 B &bull; Room 312</p>
+                  <span>&#9203; In Progress</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Algorithm Design</p>
+                  <p>CS-405 B &bull; Room 312</p>
+                  <span>&#128339; Scheduled</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 11:00 AM - 12:00 PM -->
-                    <tr>
-                        <td>11:00&ndash;12:00 PM</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Software Eng. Lab</p>
-                                <p>CS-501 C &bull; Lab 203</p>
-                                <span>&#10006; Cancelled</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+            <!-- 11:00 AM - 12:00 PM -->
+            <tr>
+              <td>11:00&ndash;12:00 PM</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Software Eng. Lab</p>
+                  <p>CS-501 C &bull; Lab 203</p>
+                  <span>&#10006; Cancelled</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 12:00 - 1:00 PM (Lunch) -->
-                    <tr>
-                        <td>12:00&ndash;1:00 PM</td>
-                        <td colspan="7">&#127860; Lunch Break</td>
-                    </tr>
+            <!-- 12:00 - 1:00 PM (Lunch) -->
+            <tr>
+              <td>12:00&ndash;1:00 PM</td>
+              <td colspan="7">&#127860; Lunch Break</td>
+            </tr>
 
-                    <!-- 1:00 - 2:00 PM -->
-                    <tr>
-                        <td>1:00&ndash;2:00 PM</td>
-                        <td>
-                            <div>
-                                <p>Database Systems</p>
-                                <p>CS-302 A &bull; Lab 101</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Database Systems</p>
-                                <p>CS-302 A &bull; Lab 101</p>
-                                <span>&#128339; Scheduled</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+            <!-- 1:00 - 2:00 PM -->
+            <tr>
+              <td>1:00&ndash;2:00 PM</td>
+              <td>
+                <div>
+                  <p>Database Systems</p>
+                  <p>CS-302 A &bull; Lab 101</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Database Systems</p>
+                  <p>CS-302 A &bull; Lab 101</p>
+                  <span>&#128339; Scheduled</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 2:00 - 3:00 PM -->
-                    <tr>
-                        <td>2:00&ndash;3:00 PM</td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Software Eng.</p>
-                                <p>CS-501 C &bull; Room 418</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Software Eng.</p>
-                                <p>CS-501 C &bull; Room 418</p>
-                                <span>&#128339; Scheduled</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+            <!-- 2:00 - 3:00 PM -->
+            <tr>
+              <td>2:00&ndash;3:00 PM</td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Software Eng.</p>
+                  <p>CS-501 C &bull; Room 418</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Software Eng.</p>
+                  <p>CS-501 C &bull; Room 418</p>
+                  <span>&#128339; Scheduled</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 3:00 - 4:00 PM -->
-                    <tr>
-                        <td>3:00&ndash;4:00 PM</td>
-                        <td>
-                            <div>
-                                <p>Software Eng.</p>
-                                <p>CS-501 C &bull; Room 418</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Office Hours</p>
-                                <p>Faculty Office 12B</p>
-                                <span>&#128339; Scheduled</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
+            <!-- 3:00 - 4:00 PM -->
+            <tr>
+              <td>3:00&ndash;4:00 PM</td>
+              <td>
+                <div>
+                  <p>Software Eng.</p>
+                  <p>CS-501 C &bull; Room 418</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Office Hours</p>
+                  <p>Faculty Office 12B</p>
+                  <span>&#128339; Scheduled</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
 
-                    <!-- 4:00 - 5:00 PM -->
-                    <tr>
-                        <td>4:00&ndash;5:00 PM</td>
-                        <td>&mdash;</td>
-                        <td>
-                            <div>
-                                <p>Office Hours</p>
-                                <p>Faculty Office 12B</p>
-                                <span>&#10004; Completed</span>
-                            </div>
-                        </td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                        <td>&mdash;</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <!-- 4:00 - 5:00 PM -->
+            <tr>
+              <td>4:00&ndash;5:00 PM</td>
+              <td>&mdash;</td>
+              <td>
+                <div>
+                  <p>Office Hours</p>
+                  <p>Faculty Office 12B</p>
+                  <span>&#10004; Completed</span>
+                </div>
+              </td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <!-- Summary Cards -->
-        <section>
-            <article>
-                <p>Classes This Week</p>
-                <p>18</p>
-            </article>
-            <article>
-                <p>Hours Scheduled</p>
-                <p>22</p>
-            </article>
-            <article>
-                <p>Cancelled</p>
-                <p>1</p>
-            </article>
-            <article>
-                <p>Office Hours</p>
-                <p>3</p>
-            </article>
-        </section>
+      <!-- Summary Cards -->
+      <section>
+        <article>
+          <p>Classes This Week</p>
+          <p>18</p>
+        </article>
+        <article>
+          <p>Hours Scheduled</p>
+          <p>22</p>
+        </article>
+        <article>
+          <p>Cancelled</p>
+          <p>1</p>
+        </article>
+        <article>
+          <p>Office Hours</p>
+          <p>3</p>
+        </article>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Evergreen University &mdash; Faculty Management System. All Rights Reserved.</p>
-        <p>
-            Contact IT Support: <span>itsupport@evergreen.edu</span> &nbsp;|&nbsp; Phone: +1 (555) 234-5678 &nbsp;|&nbsp; Campus: 1200 Academic Drive, Springfield
-        </p>
+      <p>
+        &copy; 2026 Evergreen University &mdash; Faculty Management System. All
+        Rights Reserved.
+      </p>
+      <p>
+        Contact IT Support: <span>itsupport@evergreen.edu</span> &nbsp;|&nbsp;
+        Phone: +1 (555) 234-5678 &nbsp;|&nbsp; Campus: 1200 Academic Drive,
+        Springfield
+      </p>
     </footer>
-
-</body>
+  </body>
 </html>
