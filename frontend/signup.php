@@ -1,10 +1,5 @@
 <?php
-$username = "root";
-$server = "localhost";
-$pw = "";
-$db = "facultymanagement";
-
-$conn = mysqli_connect($server,$username, $pw, $db);
+include 'dbconnect.php'
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
     {
