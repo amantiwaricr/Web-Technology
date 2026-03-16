@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -329,3 +330,315 @@
     </footer>
   </body>
 </html>
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faculty Dashboard - Tribhuvan University Faculty Management System">
+    <title>Dashboard | Faculty Management System</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body class="body">
+
+    <!-- Top Navigation Bar -->
+    <header class="header">
+
+        <div class="top-bar">
+
+            <div class="logo-section">
+                <div class="logo-box">
+                    <div class="logo-circle">
+                        <span class="logo-text">TU</span>
+                    </div>
+                    <span class="system-title">Faculty Management System</span>
+                </div>
+            </div>
+
+            <div class="user-section">
+                <span class="welcome-text">Welcome, Mr. Sarita Neupane</span>
+                <div class="user-avatar">
+                    <span class="avatar-text">SN</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">&#9776; Dashboard</a>
+                <a href="schedule.html" class="nav-link">&#128197; Schedule</a>
+                <a href="attendance.html" class="nav-link">&#9745; Attendance</a>
+                <a href="faculty-details.html" class="nav-link">&#128101; Faculty List</a>
+                <a href="profile.html" class="nav-link">&#128100; Profile</a>
+                <a href="index.html" class="nav-link logout">&#10140; Logout</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <span class="breadcrumb-path">
+                <a href="dashboard.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-arrow">&#9656;</span>
+                <span class="breadcrumb-current">Dashboard</span>
+            </span>
+        </nav>
+
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1 class="page-title">Dashboard Overview</h1>
+            <p class="page-description">
+                Welcome back! Here's a summary of your academic activity for Spring 2026.
+            </p>
+        </div>
+
+        <!-- Stat Cards Row -->
+        <section class="stats-section">
+
+            <!-- Card 1 -->
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-info">
+                        <p class="stat-title">Total Faculty</p>
+                        <p class="stat-number">148</p>
+                    </div>
+                    <div class="stat-icon">&#128101;</div>
+                </div>
+                <p class="stat-note">&#9650; 12 new this semester</p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-info">
+                        <p class="stat-title">Today's Classes</p>
+                        <p class="stat-number">24</p>
+                    </div>
+                    <div class="stat-icon">&#128218;</div>
+                </div>
+                <p class="stat-note">5 completed &bull; 3 ongoing &bull; 16 upcoming</p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-info">
+                        <p class="stat-title">Pending Attendance</p>
+                        <p class="stat-number">7</p>
+                    </div>
+                    <div class="stat-icon">&#9888;</div>
+                </div>
+                <p class="stat-note">Requires submission by 5:00 PM</p>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-info">
+                        <p class="stat-title">Departments</p>
+                        <p class="stat-number">12</p>
+                    </div>
+                    <div class="stat-icon">&#127979;</div>
+                </div>
+                <p class="stat-note">All departments active</p>
+            </article>
+
+        </section>
+
+        <!-- Two Column Layout -->
+        <div class="dashboard-layout">
+
+            <!-- Left Column -->
+            <section class="left-column">
+
+                <!-- Schedule -->
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+                        <h2 class="card-title">Today's Schedule</h2>
+                        <a href="schedule.html" class="card-link">View Full Schedule &#10132;</a>
+                    </div>
+
+                    <table class="table schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Class</th>
+                                <th>Room</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>8:00 - 9:00 AM</td>
+                                <td>Data Structures</td>
+                                <td>CS-301 A</td>
+                                <td>Room 204</td>
+                                <td><span class="status completed">Completed</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>10:00 - 11:00 AM</td>
+                                <td>Algorithm Design</td>
+                                <td>CS-405 B</td>
+                                <td>Room 312</td>
+                                <td><span class="status ongoing">Ongoing</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>1:00 - 2:00 PM</td>
+                                <td>Database Systems</td>
+                                <td>CS-302 A</td>
+                                <td>Lab 101</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>3:00 - 4:30 PM</td>
+                                <td>Software Engineering</td>
+                                <td>CS-501 C</td>
+                                <td>Room 418</td>
+                                <td><span class="status scheduled">Scheduled</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </article>
+
+                <!-- Attendance -->
+                <article class="dashboard-card">
+
+                    <div class="card-header">
+                        <h2 class="card-title">Recent Attendance Summary</h2>
+                        <a href="attendance.html" class="card-link">View All &#10132;</a>
+                    </div>
+
+                    <table class="table attendance-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Date</th>
+                                <th>Present</th>
+                                <th>Absent</th>
+                                <th>Rate</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>CS-301 A</td>
+                                <td>Mar 14, 2026</td>
+                                <td>38</td>
+                                <td>4</td>
+                                <td>90.5%</td>
+                            </tr>
+
+                            <tr>
+                                <td>CS-405 B</td>
+                                <td>Mar 13, 2026</td>
+                                <td>29</td>
+                                <td>6</td>
+                                <td>82.9%</td>
+                            </tr>
+
+                            <tr>
+                                <td>CS-302 A</td>
+                                <td>Mar 13, 2026</td>
+                                <td>41</td>
+                                <td>2</td>
+                                <td>95.3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </article>
+
+            </section>
+
+            <!-- Right Column -->
+            <aside class="sidebar">
+
+                <!-- Quick Links -->
+                <article class="sidebar-card">
+                    <h3 class="sidebar-title">Quick Actions</h3>
+
+                    <a href="attendance.html" class="sidebar-link">&#9745; Mark Attendance</a>
+                    <a href="schedule.html" class="sidebar-link">&#128197; View Schedule</a>
+                    <a href="faculty-details.html" class="sidebar-link">&#128101; Faculty Directory</a>
+                    <a href="profile.html" class="sidebar-link">&#128100; Edit Profile</a>
+                </article>
+
+                <!-- Announcements -->
+                <article class="sidebar-card">
+                    <h3 class="sidebar-title">&#128227; Announcements</h3>
+
+                    <div class="announcement">
+                        <p class="announcement-title">Mid-Semester Exam Schedule</p>
+                        <p class="announcement-text">
+                            Exams will be conducted from April 5-12, 2026. Faculty are requested to submit question papers by March 28.
+                        </p>
+                        <span class="announcement-date">March 10, 2026</span>
+                    </div>
+
+                    <div class="announcement">
+                        <p class="announcement-title">Faculty Meeting Reminder</p>
+                        <p class="announcement-text">
+                            General faculty meeting scheduled for Friday, March 20 at 3:00 PM in Conference Hall A.
+                        </p>
+                        <span class="announcement-date">March 8, 2026</span>
+                    </div>
+
+                    <div class="announcement">
+                        <p class="announcement-title">System Maintenance Notice</p>
+                        <p class="announcement-text">
+                            The portal will be under maintenance on Sunday, March 22 from 2:00 AM to 6:00 AM.
+                        </p>
+                        <span class="announcement-date">March 6, 2026</span>
+                    </div>
+
+                </article>
+
+                <!-- Calendar -->
+                <article class="sidebar-card">
+                    <h3 class="sidebar-title">&#128197; March 2026</h3>
+
+                    <table class="calendar-table">
+                        <!-- calendar structure unchanged -->
+                    </table>
+
+                </article>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p class="footer-text">
+            &copy; 2026 Tribhuvan University &mdash; Faculty Management System. All Rights Reserved.
+        </p>
+
+        <p class="footer-contact">
+            Contact IT Support:
+            <span class="footer-email">itsupport@tribhuvan.edu</span>
+            &nbsp;|&nbsp; Phone: +977 9876543212
+            &nbsp;|&nbsp; Campus: Kirtipur, Kathmandu
+        </p>
+
+    </footer>
+
+</body>
+</html>
+>>>>>>> ff77d299b9e60905e70d75796dd1cc2a44a727c5
