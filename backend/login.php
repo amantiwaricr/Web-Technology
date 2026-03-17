@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                     if($user['user_role'] == 'admin') {
                         header("Location: ../frontend/admin-dashboard.html");
                         exit();
-                    } else if($user['user_role'] == 'faculty') {
+                    } else if($user['user_role'] == 'user') {
                         header("Location: ../frontend/faculty-dashboard.html");
                         exit();
                     }
