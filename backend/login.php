@@ -2,7 +2,7 @@
 include 'dbconnect.php';
 if($_SERVER["REQUEST_METHOD"]=="POST")
     {
-        $email=$_POST['faculty_id'];
+        $email=$_POST['login-email'];
         $password=$_POST['password'];
         $retrieve="Select * from users where email='$email'";
         $result=mysqli_query($conn,$retrieve);
@@ -13,8 +13,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $user=mysqli_fetch_assoc($result);
             if(password_verify($password, $user['password']))
                 {
-                    header("Location: ../frontend/dashboard.html");
-                    exit();
+                    if($user['role'] == 'admin') {
+                        header("Location: ../frontend/admin-dashboard.html");
+                        exit();
+                    } else if($user['role'] == 'faculty') {
+                        header("Location: ../frontend/faculty-dashboard.html");
+                        exit();
+                    }
                 }
                 else
                     {
