@@ -49,6 +49,60 @@ if (isset($_POST['update'])) {
 <head>
     <title>Edit Faculty</title>
 </head>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #b4d7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    color: #1a3d7c;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3399ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: navy;
+    transform: scale(1.05);
+}
+</style>
 <body>
 
 <h2>Edit Faculty</h2>
