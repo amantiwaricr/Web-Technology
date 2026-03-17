@@ -4,7 +4,8 @@ include 'dbconnect.php';
 if (isset($_GET['delete_id'])) {
     $id = (int) $_GET['delete_id'];  // sanitize input
 
-    $delete_sql = "DELETE FROM faculty WHERE id = $id";
+    $delete_sql = "DELETE FROM attendance WHERE f_id = $id; 
+    DELETE FROM faculty WHERE id = $id;";
     if (mysqli_query($conn, $delete_sql)) {
         header("Location: viewfaculty.php");
         exit; // stop further rendering so table reloads fresh
