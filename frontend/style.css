@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #fff0f6;
+  background-color: #e6f7ff; /* light blue background */
   color: #333;
   line-height: 1.6;
 }
@@ -17,17 +17,17 @@ a {
 }
 
 a:hover {
-  color: #d63384;
+  color: #3399ff; /* hover accent blue */
 }
 
 header {
-  background-color: #ffc0cb;
+  background-color: #cce6ff; /* header light blue */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   flex-wrap: wrap;
-  border-bottom: 2px solid #ffb6c1;
+  border-bottom: 2px solid #99ccff; /* slightly darker blue border */
 }
 
 header div span {
@@ -70,7 +70,7 @@ article {
 section article p:first-child {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #d63384;
+  color: #3399ff; /* primary accent blue */
 }
 
 section article p:last-child {
@@ -97,7 +97,7 @@ td {
 }
 
 th {
-  background-color: #ffe4ec;
+  background-color: #cce6ff; /* table header light blue */
   font-weight: 600;
 }
 
@@ -118,14 +118,14 @@ button {
   width: 100%;
   padding: 10px 12px;
   margin-top: 5px;
-  border: 1px solid #ffc0cb;
+  border: 1px solid #99ccff; /* input border blue */
   border-radius: 8px;
   font-size: 1rem;
 }
 
 button,
 input[type="submit"] {
-  background-color: #ff8fab;
+  background-color: #3399ff; /* main button blue */
   color: white;
   font-weight: bold;
   border: none;
@@ -135,7 +135,7 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: #ff6f91;
+  background-color: #007acc; /* hover darker blue */
 }
 
 form div {
@@ -153,7 +153,7 @@ table thead th {
 }
 
 table tbody td div {
-  background-color: #ffe4ec;
+  background-color: #cce6ff; /* table cell light blue */
   padding: 5px 8px;
   border-radius: 6px;
   text-align: center;
@@ -164,7 +164,7 @@ table tbody td div span {
 }
 
 footer {
-  background-color: #ffc0cb;
+  background-color: #cce6ff; /* footer light blue */
   text-align: center;
   padding: 15px 10px;
   margin-top: 20px;
