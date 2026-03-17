@@ -4,13 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #b4d7f7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 3.5em;
+        margin-top: 40px;
+        color: rgb(7, 7, 90);
+    }
+
+    form {
+        width: 400px;
+        margin: 20px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        border-radius: 30px; 
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: rgb(54, 54, 153);
+        color: white;
+        transform: scale(1.05);
+    }
+
+    footer {
+        margin-top: auto;
+        width: 100%;
+        background-color: #69aceb;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    footer span {
+        font-weight: bold;
+    }
+    </style>
 </head>
 <body>
+    <h1>Admin Dashboard</h1>
     <form action="../backend/viewfaculty.php" method="POST">
         <input type="submit" value="View Faculty">
     </form>
     <form action="../backend/attendance.php" method="POST">
         <input type="submit" value="Take Attendance">
     </form>
+
+    <footer>
+      <p>
+        &copy; 2026 Kathford International &mdash; Faculty Management System. All
+        Rights Reserved.
+      </p>
+      <p>
+        Contact IT Support: <span>itsupport@kathford.edu</span> &nbsp;|&nbsp;
+        Phone: +1 (555) 234-5678 &nbsp;|&nbsp; Campus: 1200 Academic Drive,
+        Springfield
+      </p>
+    </footer>
+
 </body>
 </html>
