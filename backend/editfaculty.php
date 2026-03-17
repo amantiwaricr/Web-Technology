@@ -1,18 +1,33 @@
 <?php
+session_start();
 include 'dbconnect.php';
 
 if (isset($_GET['id'])) {
-    $id = (int) $_GET['id'];
+    $id = (int)$_GET['id'];
 
     $sql = "SELECT * FROM faculty WHERE id = $id";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
         $row = mysqli_fetch_assoc($result);
-    } else {
+    }
+    else {
         die("Error: " . mysqli_error($conn));
     }
-} 
+}
+else if (isset($_SESSION['user_id'])) {
+    // If no ID in URL, fall back to the logged-in user's session ID
+    $user_id = (int)$_SESSION['user_id'];
+    $sql = "SELECT * FROM faculty WHERE user_id = $user_id";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+    }
+    else {
+        die("Error: " . mysqli_error($conn));
+    }
+}
 else 
 {
     die("No ID received");
@@ -23,7 +38,7 @@ else
 // =====================
 if (isset($_POST['update'])) {
 
-    $id = (int) $_POST['id'];
+    $id = (int)$_POST['id'];
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
@@ -38,7 +53,8 @@ if (isset($_POST['update'])) {
 
     if (mysqli_query($conn, $update)) {
         header("refresh:1; url=viewfaculty.php");
-    } else {
+    }
+    else {
         echo "Update failed: " . mysqli_error($conn);
     }
 }

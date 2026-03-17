@@ -32,20 +32,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($conn, $sqluser);
 
         if ($result) {
-            $sql_find_user = "SELECT id FROM users WHERE email = '$email'";
-            $result = mysqli_query($conn, $sql_find_user);
+            if ($user_role == 'user') {
+                $sql_find_user = "SELECT id FROM users WHERE email = '$email'";
+                $result = mysqli_query($conn, $sql_find_user);
 
-            $row = mysqli_fetch_assoc($result);
-            $fetched_user_id = $row['id']; // This is our foreign key!
+                $row = mysqli_fetch_assoc($result);
+                $fetched_user_id = $row['id']; // This is our foreign key!
 
-            $sqlfaculty = "INSERT INTO Faculty (faculty_name, user_id) 
+                $sqlfaculty = "INSERT INTO Faculty (faculty_name, user_id) 
                    VALUES ('$username', '$fetched_user_id')";
 
-            if (mysqli_query($conn, $sqlfaculty)) {
-                echo "signup successful!";
+                if (mysqli_query($conn, $sqlfaculty)) {
+                    echo "signup successful!";
+                }
+                else {
+                    echo "signup failed.";
+                }
             }
-            else {
-                echo "signup failed.";
+            else if ($user_role == 'admin') {
+                echo "signup successful!";
             }
         }
         else {

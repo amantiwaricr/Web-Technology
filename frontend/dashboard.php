@@ -59,7 +59,10 @@
           2026.
         </p>
       </div>
-
+<a href="../backend/editfaculty.php?id=<?php session_start();
+echo $_SESSION['user_id']; ?>" class="action-link">
+            Edit
+        </a>
       <!-- Stat Cards Row -->
       <section>
         <!-- Card 1 - Total Faculty -->
