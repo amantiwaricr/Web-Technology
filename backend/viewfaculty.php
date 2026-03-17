@@ -2,14 +2,15 @@
 include 'dbconnect.php';
 
 if (isset($_GET['delete_id'])) {
-    $id = (int) $_GET['delete_id'];  // sanitize input
+    $id = (int)$_GET['delete_id']; // sanitize input
 
-    $delete_sql = "DELETE FROM attendance WHERE f_id = $id; 
-    DELETE FROM faculty WHERE id = $id;";
-    if (mysqli_query($conn, $delete_sql)) {
+    mysqli_query($conn, "DELETE FROM attendance WHERE f_id = $id");
+    $result = mysqli_query($conn, "DELETE FROM faculty WHERE id = $id");
+    if ($result) {
         header("Location: viewfaculty.php");
         exit; // stop further rendering so table reloads fresh
-    } else {
+    }
+    else {
         echo "Error deleting record: " . mysqli_error($conn);
         exit;
     }
@@ -69,7 +70,7 @@ $result = mysqli_query($conn, $sql);
         <th>Delete</th>
     </tr>
 
-<?php while($row = mysqli_fetch_assoc($result)) { ?>
+<?php while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
     <td><?php echo $row['id']; ?></td>
     <td><?php echo $row['faculty_name']; ?></td>
@@ -90,7 +91,8 @@ $result = mysqli_query($conn, $sql);
     </td>
 
 </tr>
-<?php } ?>
+<?php
+}?>
 
 </table>
 </body>
