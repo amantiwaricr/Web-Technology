@@ -13,10 +13,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $user=mysqli_fetch_assoc($result);
             if(password_verify($password, $user['password']))
                 {
-                    if($user['role'] == 'admin') {
+                    
+                    if($user['user_role'] == 'admin') {
                         header("Location: ../frontend/admin-dashboard.html");
                         exit();
-                    } else if($user['role'] == 'faculty') {
+                    } else if($user['user_role'] == 'faculty') {
                         header("Location: ../frontend/faculty-dashboard.html");
                         exit();
                     }
