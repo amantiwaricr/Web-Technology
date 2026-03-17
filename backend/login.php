@@ -13,12 +13,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             $user=mysqli_fetch_assoc($result);
             if(password_verify($password, $user['password']))
                 {
-                    header("Location: dashboard.html");
+                    header("Location: ../frontend/dashboard.html");
                     exit();
                 }
                 else
                     {
-                        die("Password do not match");
+                        die("Invalid Password");
+                        header("Location: ../frontend/login.html");
                     }
     }
 ?>
