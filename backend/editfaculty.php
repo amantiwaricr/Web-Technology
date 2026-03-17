@@ -15,19 +15,6 @@ if (isset($_GET['id'])) {
         die("Error: " . mysqli_error($conn));
     }
 }
-else if (isset($_SESSION['user_id'])) {
-    // If no ID in URL, fall back to the logged-in user's session ID
-    $user_id = (int)$_SESSION['user_id'];
-    $sql = "SELECT * FROM faculty WHERE user_id = $user_id";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-    }
-    else {
-        die("Error: " . mysqli_error($conn));
-    }
-}
 else 
 {
     die("No ID received");
@@ -52,7 +39,12 @@ if (isset($_POST['update'])) {
                WHERE id=$id;";
 
     if (mysqli_query($conn, $update)) {
-        header("refresh:1; url=viewfaculty.php");
+        if ($_SESSION['user_role'] == 'admin') {
+            header("refresh:1; url=viewfaculty.php");
+        }
+        else {
+            header("refresh:1; url=../frontend/dashboard.php");
+        }
     }
     else {
         echo "Update failed: " . mysqli_error($conn);
@@ -122,6 +114,7 @@ input[type="submit"]:hover {
 <body>
 
 <h2>Edit Faculty</h2>
+
 
 <form method="POST">
 

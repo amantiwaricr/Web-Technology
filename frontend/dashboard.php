@@ -59,8 +59,9 @@
           2026.
         </p>
       </div>
-<a href="../backend/editfaculty.php?id=<?php session_start();
-echo $_SESSION['user_id']; ?>" class="action-link">
+
+<?php session_start(); ?>
+<a href="../backend/editfaculty.php?id=<?php echo $_SESSION['faculty_id']; ?>" class="action-link">
             Edit
         </a>
       <!-- Stat Cards Row -->
