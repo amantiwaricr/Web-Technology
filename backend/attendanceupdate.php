@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     echo "<h2>Attendance Submitted Successfully for $today!</h2>";
-    echo "<a href='/frontend/index.html'>Back to List</a>";
+    echo "<a href='../frontend/index.html'>Back to List</a>";
 }
 else {
     echo "Access Denied.";
