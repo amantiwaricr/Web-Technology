@@ -1,199 +1,1038 @@
+/* ========================================
+   RESET & BASE
+   ======================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: #e6f7ff; /* light blue background */
-  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #2c3e50;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   text-decoration: none;
-  color: #333;
+  color: #3498db;
 }
 
 a:hover {
-  color: #3399ff; /* hover accent blue */
+  color: #2980b9;
 }
 
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a3a5c;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a3a5c;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f3f6;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a3a5c;
+  margin-bottom: 14px;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
 header {
-  background-color: #cce6ff; /* header light blue */
+  background: linear-gradient(135deg, #0d2137, #1a3a5c);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header > div {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  flex-wrap: wrap;
-  border-bottom: 2px solid #99ccff; /* slightly darker blue border */
+  justify-content: space-between;
+  padding: 12px 30px;
 }
 
-header div span {
+header > div > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Logo circle */
+header > div > div > div {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > div > div > div > span {
+  color: white;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 
-header nav a {
-  margin: 5px 10px;
+/* System title */
+header > div > div > span {
+  color: #ffffff;
+  font-size: 17px;
   font-weight: 600;
 }
 
-main {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Welcome text */
+header > div > div:last-child > span {
+  color: #8ab4d6;
+  font-size: 13px;
+  font-weight: 400;
 }
 
-main nav span {
+/* User avatar */
+header > div > div:last-child > div {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+  justify-content: center;
 }
 
-main nav span span {
-  margin: 0 5px;
-  color: #666;
+header > div > div:last-child > div > span {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-section,
-article {
-  background-color: white;
-  padding: 20px;
+/* Navigation bar */
+header nav {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0 30px;
+}
+
+header nav > div {
+  display: flex;
+  gap: 0;
+}
+
+header nav a {
+  color: #8ab4d6;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+header nav a:hover {
+  color: #ffffff;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+header nav a:last-child {
+  color: #e74c3c;
+  margin-left: auto;
+}
+
+header nav a:last-child:hover {
+  color: #ff6b6b;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+main {
+  flex: 1;
+  padding: 25px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Breadcrumb */
+main > nav {
   margin-bottom: 20px;
+}
+
+main > nav > span {
+  color: #7f8c9b;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+main > nav > span > span {
+  color: #bcc5ce;
+  margin: 0 6px;
+}
+
+main > nav > span > span:last-child {
+  color: #5a6a7a;
+  font-weight: 500;
+}
+
+/* Page title area */
+main > div:first-of-type {
+  margin-bottom: 25px;
+}
+
+main > div:first-of-type > p {
+  color: #7f8c9b;
+  font-size: 14px;
+}
+
+/* ========================================
+   SECTIONS & ARTICLES (Cards)
+   ======================================== */
+section {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+article {
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-width: 180px;
 }
 
-section article p:first-child {
-  font-weight: bold;
+/* Stat cards inside section */
+section > article {
+  border-top: 3px solid #3498db;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section > article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+section > article:nth-child(1) {
+  border-top-color: #3498db;
+}
+
+section > article:nth-child(2) {
+  border-top-color: #27ae60;
+}
+
+section > article:nth-child(3) {
+  border-top-color: #e67e22;
+}
+
+section > article:nth-child(4) {
+  border-top-color: #e74c3c;
+}
+
+section > article:nth-child(5) {
+  border-top-color: #9b59b6;
+}
+
+/* Stat card first paragraph (label) */
+section > article > p:first-child,
+section > article > div > div > p:first-child {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7f8c9b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* Stat card number */
+section > article > p:nth-child(2),
+section > article > div > div > p:nth-child(2) {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a3a5c;
+}
+
+/* Stat card sub text */
+section > article > p:last-child:not(:first-child):not(:nth-child(2)) {
+  font-size: 12px;
+  color: #7f8c9b;
+  margin-top: 4px;
+}
+
+/* Content section (full width blocks like tables) */
+section:has(table),
+section:has(form),
+section:has(h2) {
+  display: block;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Nested articles don't need the card styling repeated */
+section > article > article {
+  box-shadow: none;
+  padding: 0;
+  min-width: auto;
+  border-top: none;
+}
+
+/* ========================================
+   TABLES
+   ======================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead tr {
+  background-color: #f7f9fc;
+}
+
+th {
+  text-align: left;
+  padding: 12px 15px;
+  color: #5a6a7a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  border-bottom: 2px solid #e8edf2;
+}
+
+td {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #2c3e50;
+  border-bottom: 1px solid #f0f3f6;
+}
+
+tbody tr:hover {
+  background-color: #f7f9fc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafbfd;
+}
+
+tbody tr:nth-child(even):hover {
+  background-color: #f0f4f8;
+}
+
+/* Table cell divs (schedule blocks) */
+td > div {
+  background-color: #e8f4fd;
+  border-radius: 8px;
+  padding: 10px 8px;
+  border-left: 3px solid #3498db;
+  text-align: center;
+}
+
+td > div > p:first-child {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a3a5c;
+  margin-bottom: 2px;
+}
+
+td > div > p:nth-child(2) {
+  font-size: 10px;
+  color: #5a6a7a;
+}
+
+td > div > span {
+  font-size: 9px;
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* Status spans in table cells */
+td > span {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #e8f4fd;
+  color: #3498db;
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+form > div {
+  flex: 1;
+  min-width: 150px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  color: #5a6a7a;
   margin-bottom: 5px;
-  color: #3399ff; /* primary accent blue */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-section article p:last-child {
-  font-size: 1.4rem;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #e1e8ef;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2c3e50;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  background-color: white;
 }
 
-.flex {
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+input[type="checkbox"] {
+  width: auto;
+  padding: 0;
+  accent-color: #3498db;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2980b9, #2471a3);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+  transform: translateY(-1px);
+}
+
+button[type="reset"] {
+  background: #f0f3f6;
+  color: #5a6a7a;
+  border: 2px solid #e1e8ef;
+  box-shadow: none;
+}
+
+button[type="reset"]:hover {
+  background: #e8edf2;
+  transform: translateY(-1px);
+}
+
+/* ========================================
+   ASIDE (Sidebar)
+   ======================================== */
+aside {
+  min-width: 280px;
+}
+
+aside article {
+  margin-bottom: 20px;
+}
+
+aside article a {
+  display: block;
+  padding: 10px 14px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  color: #2c3e50;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border-left: 3px solid #3498db;
+  transition: all 0.2s ease;
+}
+
+aside article a:hover {
+  background-color: #e8f4fd;
+  transform: translateX(3px);
+}
+
+aside article a:nth-child(3) {
+  border-left-color: #2ecc71;
+}
+
+aside article a:nth-child(4) {
+  border-left-color: #9b59b6;
+}
+
+aside article a:nth-child(5) {
+  border-left-color: #e67e22;
+}
+
+/* Announcement divs */
+aside article > div {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f0f3f6;
+  margin-bottom: 14px;
+}
+
+aside article > div:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+aside article > div > p:first-child {
+  font-size: 14px;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+aside article > div > p:nth-child(2) {
+  font-size: 12px;
+  color: #7f8c9b;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+aside article > div > span {
+  font-size: 11px;
+  color: #3498db;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+  background: linear-gradient(135deg, #0d2137, #1a3a5c);
+  padding: 20px 30px;
+  text-align: center;
+  color: #5a7a96;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+footer p:last-child {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+footer span {
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* ========================================
+   LOGIN PAGE (index.html)
+   ======================================== */
+body:has(main > div > div > form[action*="login"]) {
+  background: linear-gradient(135deg, #1a3a5c 0%, #2c5f8a 50%, #1a3a5c 100%);
+}
+
+body:has(main > div > div > form[action*="login"]) main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 40px 20px;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:first-child {
+  flex: 1;
+  background: linear-gradient(160deg, #1e4d7b, #0d2137);
+  padding: 50px 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:first-child h1 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:first-child p {
+  color: #8ab4d6;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 50px 40px;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child h2 {
+  color: #1a3a5c;
+  font-size: 24px;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child > p {
+  color: #7f8c9b;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+body:has(main > div > div > form[action*="login"]) form {
+  display: block;
+}
+
+body:has(main > div > div > form[action*="login"]) form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+body:has(main > div > div > form[action*="login"]) form input[type="text"],
+body:has(main > div > div > form[action*="login"]) form input[type="password"] {
+  margin-bottom: 20px;
+}
+
+body:has(main > div > div > form[action*="login"]) form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+/* Signup button link */
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child > a {
+  display: block;
+  margin-top: 10px;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child > a button {
+  width: 100%;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child > a button:hover {
+  background: linear-gradient(135deg, #219a52, #27ae60);
+}
+
+/* Academic info at bottom of login */
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child > div:last-child {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e8edf2;
+}
+
+body:has(main > div > div > form[action*="login"]) main > div > div:last-child > div:last-child p {
+  color: #a0adb8;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+/* ========================================
+   TWO-COLUMN LAYOUT
+   ======================================== */
+main > div:has(aside),
+main > div:has(> div > article) {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+main > div:has(aside) > section,
+main > div:has(> div > article) > div {
+  flex: 1;
+  min-width: 320px;
+}
+
+main > div:has(aside) > section {
+  flex: 2;
+}
+
+/* Articles inside two-col layout */
+main > div > div > article,
+main > div > section > article {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Section header with link */
+article > div:first-child:has(h2):has(a) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article > div:first-child > a {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ========================================
+   SCHEDULE PAGE - TIMETABLE CELL COLORS
+   ======================================== */
+/* Schedule section with section header */
+section > div:first-child:has(h2) {
+  background: linear-gradient(135deg, #1a3a5c, #2c5f8a);
+  padding: 16px 25px;
+  margin: -25px -25px 20px -25px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+section > div:first-child:has(h2) h2 {
+  color: white;
+  font-size: 16px;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+section > div:first-child:has(h2) p {
+  color: #8ab4d6;
+  font-size: 12px;
+}
+
+section > div:first-child:has(h2) span {
+  background: rgba(52, 152, 219, 0.2);
+  color: #8ab4d6;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ========================================
+   PROFILE PAGE
+   ======================================== */
+/* Profile header section */
+main > section:first-of-type {
+  background: linear-gradient(135deg, #1a3a5c, #2c5f8a);
+  border-radius: 16px;
+  padding: 35px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  color: white;
+}
+
+main > section:first-of-type h1 {
+  color: white;
+  font-size: 28px;
+}
+
+main > section:first-of-type p {
+  color: #8ab4d6;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+main > section:first-of-type span {
+  display: inline-block;
+  background: rgba(52, 152, 219, 0.2);
+  color: #8ab4d6;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+/* Profile header avatar */
+main > section:first-of-type > div:first-child {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+main > section:first-of-type > div:first-child > span {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  background: none;
+  padding: 0;
+}
+
+/* Profile stat boxes */
+main > section:first-of-type > div:last-child {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+main > section:first-of-type > div:last-child > div {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 20px;
 }
 
-th,
-td {
-  padding: 12px 10px;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-}
-
-th {
-  background-color: #cce6ff; /* table header light blue */
-  font-weight: 600;
-}
-
-td div {
-  display: flex;
-  flex-direction: column;
-}
-
-td span {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-input,
-select,
-textarea,
-button {
-  width: 100%;
-  padding: 10px 12px;
-  margin-top: 5px;
-  border: 1px solid #99ccff; /* input border blue */
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-button,
-input[type="submit"] {
-  background-color: #3399ff; /* main button blue */
+main > section:first-of-type > div:last-child > div > p:first-child {
+  font-size: 26px;
+  font-weight: 700;
   color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover,
-input[type="submit"]:hover {
-  background-color: #007acc; /* hover darker blue */
+main > section:first-of-type > div:last-child > div > p:last-child {
+  font-size: 11px;
+  color: #8ab4d6;
+  text-transform: uppercase;
 }
 
-form div {
-  margin-bottom: 15px;
+/* Qualification cards */
+article > div:has(> p:first-child) {
+  padding: 14px;
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border-left: 4px solid #3498db;
 }
 
-form label {
-  display: block;
+article > div:has(> p:first-child) > p:first-child {
+  font-size: 15px;
+  color: #1a3a5c;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
-table thead th {
+article > div:has(> p:first-child) > p:nth-child(2) {
+  font-size: 13px;
+  color: #5a6a7a;
+  margin-bottom: 3px;
+}
+
+article > div:has(> p:first-child) > p:last-child {
+  font-size: 12px;
+  color: #7f8c9b;
+}
+
+/* Overall average box */
+article > div:last-child:has(> span) {
+  margin-top: 15px;
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #f7f9fc, #eef2f7);
+  border-radius: 8px;
   text-align: center;
 }
 
-table tbody td div {
-  background-color: #cce6ff; /* table cell light blue */
-  padding: 5px 8px;
+/* ========================================
+   PAGINATION
+   ======================================== */
+section > div:last-child:has(span) {
+  padding: 14px 0;
+  margin-top: 15px;
+  border-top: 2px solid #e8edf2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+section > div:last-child > span {
+  font-size: 13px;
+  color: #5a6a7a;
+}
+
+section > div:last-child > div {
+  display: flex;
+  gap: 4px;
+}
+
+section > div:last-child > div > span {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #e8edf2;
+  color: #5a6a7a;
   border-radius: 6px;
-  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-table tbody td div span {
-  font-size: 0.85rem;
+section > div:last-child > div > span:hover {
+  background-color: #d0d8e0;
 }
 
-footer {
-  background-color: #cce6ff; /* footer light blue */
-  text-align: center;
-  padding: 15px 10px;
-  margin-top: 20px;
-  font-size: 0.9rem;
+section > div:last-child > div > span:nth-child(2) {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  font-weight: 600;
 }
 
-footer span {
-  font-weight: bold;
+/* ========================================
+   FACULTY TABLE - Photo avatars
+   ======================================== */
+td > div:has(> span:only-child) {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  border-left: none;
 }
 
+td > div:has(> span:only-child) > span {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
 @media (max-width: 1024px) {
-  .flex {
+  main > div:has(aside),
+  main > div:has(> div > article) {
+    flex-direction: column;
+  }
+
+  section {
     flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
-  header {
+  header > div {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  header nav > div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+
+  body:has(main > div > div > form[action*="login"]) main > div {
+    flex-direction: column;
+  }
+
+  main > section:first-of-type {
     flex-direction: column;
     text-align: center;
   }
+}
 
-  header nav {
-    margin-top: 10px;
-  }
+/* ========================================
+   SIGNUP PAGE
+   ======================================== */
+body:has(form[action*="signup"]) main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 40px 20px;
+}
 
-  table,
-  th,
-  td {
-    font-size: 14px;
-  }
+body:has(form[action*="signup"]) section {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+body:has(form[action*="signup"]) form {
+  display: block;
+}
+
+body:has(form[action*="signup"]) form button {
+  width: 100%;
+  margin-top: 10px;
 }
