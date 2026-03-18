@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../backend/dbconnect.php';
+include 'dbconnect.php';
 
 $id = $_SESSION['faculty_id'];
 
@@ -65,76 +65,36 @@ $month_percentage = $month_total > 0 ? round(($month_present / $month_total) * 1
     <title>Dashboard | Faculty Management System</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="app-page dashboard-page">
-    <!-- Top Navigation Bar -->
-    <header class="site-header">
-      <div class="top-bar">
-        <div class="brand-block">
-          <div class="brand-logo">
-            <span>KI</span>
-          </div>
-          <span class="brand-title">Faculty Management System</span>
-        </div>
-        <div class="user-block">
-          <span>Welcome, <?php echo $_SESSION['username']; ?></span>
-          <div class="avatar-badge">
-            <span>SM</span>
-          </div>
-        </div>
+  <body>
+    <header>
+      <div class="header-top">
+        <span class="site-name">Faculty Management System</span>
+        welcome, <?php echo $_SESSION['username']; ?>
       </div>
-      <!-- Navigation Menu -->
-      <nav class="primary-nav">
-        <div class="nav-links">
-          <a class="is-active" href="dashboard.php">&#9776; Dashboard</a>
-          <a href="attendence.html">&#9745; Attendance</a>
-          <a href="profile.php">&#128100; Profile</a>
-          <a href="index.html">&#10140; Logout</a>
-        </div>
+      <nav>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="attendance.php">Attendance</a>
+        <a href="leaverequest.php">Leave Request</a>
+        <a href="index.html" class="logout">Logout</a>
       </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="dashboard-main">
-      <!-- Breadcrumb -->
-      <nav class="breadcrumb-nav">
+    <main>
+      <nav>
         <span>
-          <a href="dashboard.php">Home</a>
           <a href="dashboard.php">Home</a>
           <span>&#9656;</span>
           <span>Dashboard</span>
         </span>
       </nav>
 
-      <!-- Page Title -->
-      <div class="page-title-wrap">
+      <!-- Profile Header Card -->
+      <section>
         <div>
-          <h1>Dashboard Overview</h1>
-          <p>
-          Welcome back! Here's a summary of your academic activity for Spring
-          2026.
-          </p>
+          <span>F</span>
         </div>
-        <a href="../backend/editfaculty.php?id=<?php echo urlencode((string)($_SESSION['faculty_id'] ?? '')); ?>" class="action-link">
-          Edit Profile
-        </a>
-      </div>
-
-      <!-- Stat Cards Row -->
-      <section class="stats-grid">
-        <!-- Card 1 - Total Faculty -->
-        <article>
-          <div>
-            <div>
-              <p>Total Faculty</p>
-              <p>148</p>
-            </div>
-            <div>&#128101;</div>
-          </div>
-          <p>&#9650; 12 new this semester</p>
-        </article>
-
-        <!-- Card 2 - Today's Classes -->
-        <article>
+        <div>
+          <h1><?php echo $_SESSION['username']; ?></h1>
           <div>
             <span>&#9679; Active</span>
           </div>
@@ -148,10 +108,10 @@ $month_percentage = $month_total > 0 ? round(($month_present / $month_total) * 1
       </section>
 
       <!-- Two Column Layout -->
-      <div class="dashboard-layout">
-        <!-- Left Column - Recent Activity -->
-        <section class="dashboard-main-column">
-          <!-- Today's Schedule Preview -->
+      <div>
+        <!-- Left Column -->
+        <div>
+          <!-- Personal Details -->
           <article>
             <h2>&#128100; Personal Information</h2>
             <table>
@@ -182,10 +142,7 @@ $month_percentage = $month_total > 0 ? round(($month_present / $month_total) * 1
 
           <!-- Attendance Summary -->
           <article>
-            <div>
-              <h2>Recent Attendance Summary</h2>
-              <a href="attendence.html">View All &#10132;</a>
-            </div>
+            <h2>&#9745; My Attendance (Last 5 Days)</h2>
             <table>
               <thead>
                 <tr>
@@ -211,15 +168,34 @@ else {
             </table>
           </article>
 
-        <!-- Right Column - Sidebar Widgets -->
-        <aside class="dashboard-sidebar">
-          <!-- Quick Links -->
+          <!-- Edit Profile -->
           <article>
-            <h3>Quick Actions</h3>
-            <a href="attendence.html">&#9745; Mark Attendance</a>
-            <a href="schedule.html">&#128197; View Schedule</a>
-            <a href="faculty-details.html">&#128101; Faculty Directory</a>
-            <a href="profile.php">&#128100; Edit Profile</a>
+            <h2>&#9998; Edit Profile</h2>
+            <form method="POST">
+              Name:<br>
+              <input type="text" name="name" value="<?php echo $row['faculty_name']; ?>"><br><br>
+
+              Phone:<br>
+              <input type="text" name="phone" value="<?php echo $row['faculty_phone']; ?>"><br><br>
+
+              Gender:<br>
+              <select name="gender">
+                <option value="Male" <?php if ($row['gender'] == 'Male')
+  echo 'selected'; ?>>Male</option>
+                <option value="Female" <?php if ($row['gender'] == 'Female')
+  echo 'selected'; ?>>Female</option>
+                <option value="Other" <?php if ($row['gender'] == 'Other')
+  echo 'selected'; ?>>Other</option>
+              </select><br><br>
+
+              Address:<br>
+              <input type="text" name="address" value="<?php echo $row['faculty_address']; ?>"><br><br>
+
+              Designation:<br>
+              <input type="text" name="designation" value="<?php echo $row['faculty_designation']; ?>"><br><br>
+
+              <input type="submit" name="update" value="Save Changes">
+            </form>
           </article>
         </div>
       </div>

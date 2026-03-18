@@ -39,18 +39,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $row = mysqli_fetch_assoc($result);
                 $fetched_user_id = $row['id']; // This is our foreign key!
 
-                $sqlfaculty = "INSERT INTO Faculty (faculty_name, user_id) 
+                $sqlfaculty = "INSERT INTO faculty (faculty_name, user_id) 
                    VALUES ('$username', '$fetched_user_id')";
 
                 if (mysqli_query($conn, $sqlfaculty)) {
-                    echo "signup successful!";
+                    echo "<h2>Signup successful!</h2><p>Redirecting you to login...</p>";
+                    header("refresh:2; url=index.html");
+                    exit();
                 }
                 else {
-                    echo "signup failed.";
+                    echo "Error: " . mysqli_error($conn);
                 }
             }
             else if ($user_role == 'admin') {
-                echo "signup successful!";
+                echo "<h2>Signup successful!</h2><p>Redirecting you to login...</p>";
+                header("refresh:2; url=index.html");
+                exit();
             }
         }
         else {

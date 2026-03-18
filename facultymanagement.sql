@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2026 at 02:46 PM
+-- Generation Time: Mar 18, 2026 at 05:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -78,7 +78,10 @@ INSERT INTO `faculty` (`id`, `faculty_name`, `gender`, `faculty_phone`, `faculty
 (81, 'Navin Dahal', NULL, '9841000024', 'Maitidevi, Kathmandu', 'Teaching Assistant', 58),
 (82, 'Anjali Bhattarai', NULL, '9841000025', 'Sinamangal, Kathmandu', 'Lecturer', 59),
 (83, 'kiran', NULL, '9847000000', 'sadkjasdo', 'dsknfsd', 60),
-(84, 'milisha', 'Female', '9847000000', 'sadkjasdo', 'dsknfsd', 61);
+(84, 'milisha', 'Female', '9847000000', 'sadkjasdo', 'dsknfsd', 61),
+(85, 'nisha', NULL, NULL, NULL, NULL, 62),
+(86, 'nisha', NULL, NULL, NULL, NULL, 62),
+(87, 'john', NULL, NULL, NULL, NULL, 64);
 
 -- --------------------------------------------------------
 
@@ -159,7 +162,10 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `user_role`) VALUES
 (58, 'navin_dahal', 'navin.dahal@tu.edu.np', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user'),
 (59, 'anjali_bhattarai', 'anjali.bhattarai@tu.edu.np', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user'),
 (60, 'kiran', 'kiransah547@gmail.com', '$2y$10$uYhF/sXGyIP2NOQJs8EX2eKc5dKbGtmEywBNpu1YspuvgbkU8iWmu', 'admin'),
-(61, 'milisha', 'milishasapkota@kathford.edu.np', '$2y$10$Gmk7pVAo1oRVEotSOGePbO3BrKv9ScqdCondTxXo2XqZgZFoKXawy', 'user');
+(61, 'milisha', 'milishasapkota@kathford.edu.np', '$2y$10$Gmk7pVAo1oRVEotSOGePbO3BrKv9ScqdCondTxXo2XqZgZFoKXawy', 'user'),
+(62, 'nisha', 'nishadhungana@kathford.edu.np', '$2y$10$p.9GKnGtNxu0dYc6ZLthsuN7cI/LkB4B9b7.mWy3.IYnu.ojk0Yjy', 'user'),
+(63, 'nisha', 'nishadhungana@kathford.edu.np', '$2y$10$OBS8Wwa/h8xkVuMKL4cxxuY6SdWXoFH63xC6/g3Q/CTTzN1ZIhuIm', 'user'),
+(64, 'john', 'john@kathford.com', '$2y$10$9qHYkuE2b3ExNtfAvy7gIeAzCwBb6JR5qytyGPrGfPFCwlBdD577i', 'user');
 
 --
 -- Indexes for dumped tables
@@ -212,7 +218,7 @@ ALTER TABLE `attendance`
 -- AUTO_INCREMENT for table `faculty`
 --
 ALTER TABLE `faculty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `leaverequest`
@@ -230,7 +236,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- Constraints for dumped tables
