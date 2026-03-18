@@ -50,6 +50,7 @@ if($result && mysqli_num_rows($result) > 0) {
             border: none;
             border-radius: 30px; 
             cursor: pointer;
+            margin-left:120px;
         }
 
         input[type="checkbox"] {
@@ -79,7 +80,7 @@ if($result && mysqli_num_rows($result) > 0) {
         </tr>
         <?php endforeach; ?>
     </table>
-    <button type="submit">Submit Attendance</button>
+    <button type="submit" class="btn">Submit Attendance</button>
     </form>
 </body>
 </html>
