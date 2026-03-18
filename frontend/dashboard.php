@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,7 +22,7 @@
           <span>Faculty Management System</span>
         </div>
         <div>
-          <span>Welcome, Dr. Sarah Mitchell</span>
+          <span>Welcome, <?php echo $_SESSION['username']; ?></span>
           <div>
             <span>SM</span>
           </div>
@@ -34,7 +35,7 @@
           <a href="schedule.html">&#128197; Schedule</a>
           <a href="attendance.html">&#9745; Attendance</a>
           <a href="faculty-details.html">&#128101; Faculty List</a>
-          <a href="profile.html">&#128100; Profile</a>
+          <a href="profile.php">&#128100; Profile</a>
           <a href="index.html">&#10140; Logout</a>
         </div>
       </nav>

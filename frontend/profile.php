@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +19,7 @@
           <span>Faculty Management System</span>
         </div>
         <div>
-          <span>Welcome, Dr. Sarah Mitchell</span>
+          <span>Welcome, <?php echo $_SESSION['username']; ?></span>
           <div><span>SM</span></div>
         </div>
       </div>
@@ -28,7 +29,7 @@
           <a href="schedule.html">&#128197; Schedule</a>
           <a href="attendance.html">&#9745; Attendance</a>
           <a href="faculty-details.html">&#128101; Faculty List</a>
-          <a href="profile.html">&#128100; Profile</a>
+          <a href="profile.php">&#128100; Profile</a>
           <a href="index.html">&#10140; Logout</a>
         </div>
       </nav>
@@ -49,7 +50,7 @@
           <span>SM</span>
         </div>
         <div>
-          <h1>Dr. Sarah Mitchell</h1>
+          <h1><?php echo $_SESSION['username']; ?></h1>
           <p>Associate Professor &mdash; Department of Computer Science</p>
           <p>
             Faculty ID: FAC-2024-001 &nbsp;&bull;&nbsp; Joined: August 15, 2018
@@ -87,7 +88,7 @@
               <tbody>
                 <tr>
                   <td>Full Name</td>
-                  <td>Dr. Sarah Elizabeth Mitchell</td>
+                  <td><?php echo $_SESSION['username']; ?></td>
                 </tr>
                 <tr>
                   <td>Date of Birth</td>
@@ -99,11 +100,7 @@
                 </tr>
                 <tr>
                   <td>Email (Official)</td>
-                  <td>s.mitchell@kathford.edu</td>
-                </tr>
-                <tr>
-                  <td>Email (Personal)</td>
-                  <td>sarah.mitchell@gmail.com</td>
+                  <td><?php echo $_SESSION['email']; ?></td>
                 </tr>
                 <tr>
                   <td>Phone</td>
