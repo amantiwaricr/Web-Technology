@@ -223,7 +223,9 @@ article {
 section > article {
   border-top: 3px solid #3498db;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 section > article:hover {
@@ -590,7 +592,10 @@ body:has(main > div > div > form[action*="login"]) main > div {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:first-child {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:first-child {
   flex: 1;
   background: linear-gradient(160deg, #1e4d7b, #0d2137);
   padding: 50px 40px;
@@ -600,13 +605,21 @@ body:has(main > div > div > form[action*="login"]) main > div > div:first-child 
   justify-content: center;
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:first-child h1 {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:first-child
+  h1 {
   color: white;
   font-size: 28px;
   margin-bottom: 12px;
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:first-child p {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:first-child
+  p {
   color: #8ab4d6;
   font-size: 15px;
   line-height: 1.7;
@@ -618,7 +631,11 @@ body:has(main > div > div > form[action*="login"]) main > div > div:last-child {
   padding: 50px 40px;
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child h2 {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  h2 {
   color: #1a3a5c;
   font-size: 24px;
   border-bottom: none;
@@ -626,7 +643,11 @@ body:has(main > div > div > form[action*="login"]) main > div > div:last-child h
   margin-bottom: 8px;
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child > p {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  > p {
   color: #7f8c9b;
   font-size: 14px;
   margin-bottom: 30px;
@@ -656,30 +677,53 @@ body:has(main > div > div > form[action*="login"]) form button {
 }
 
 /* Signup button link */
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child > a {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  > a {
   display: block;
   margin-top: 10px;
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child > a button {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  > a
+  button {
   width: 100%;
   background: linear-gradient(135deg, #27ae60, #2ecc71);
   box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child > a button:hover {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  > a
+  button:hover {
   background: linear-gradient(135deg, #219a52, #27ae60);
 }
 
 /* Academic info at bottom of login */
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child > div:last-child {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  > div:last-child {
   text-align: center;
   margin-top: 25px;
   padding-top: 20px;
   border-top: 1px solid #e8edf2;
 }
 
-body:has(main > div > div > form[action*="login"]) main > div > div:last-child > div:last-child p {
+body:has(main > div > div > form[action*="login"])
+  main
+  > div
+  > div:last-child
+  > div:last-child
+  p {
   color: #a0adb8;
   font-size: 12px;
   margin-bottom: 2px;
@@ -1035,4 +1079,99 @@ body:has(form[action*="signup"]) form {
 body:has(form[action*="signup"]) form button {
   width: 100%;
   margin-top: 10px;
+}
+/*sign-up css*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sign {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sign input[type="text"],
+.sign input[type="email"],
+.sign input[type="password"],
+.sign select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.sign input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign input[type="submit"]:hover {
+  background-color: #45a049;
+}
+/*sign up*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e6f0ff; /* light blue background */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sign {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sign input[type="text"],
+.sign input[type="email"],
+.sign input[type="password"],
+.sign select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #a0c4ff; /* soft blue border */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.sign input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: none;
+  background-color: #3399ff; /* bright light blue */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign input[type="submit"]:hover {
+  background-color: #2673cc; /* darker blue on hover */
 }
