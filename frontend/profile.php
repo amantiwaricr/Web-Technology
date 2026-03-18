@@ -26,7 +26,6 @@
       <nav>
         <div>
           <a href="dashboard.php">&#9776; Dashboard</a>
-          <a href="schedule.html">&#128197; Schedule</a>
           <a href="attendance.html">&#9745; Attendance</a>
           <a href="faculty-details.html">&#128101; Faculty List</a>
           <a href="profile.php">&#128100; Profile</a>
@@ -173,56 +172,6 @@
             </div>
           </article>
         </div>
-
-        <!-- Right Column -->
-        <div>
-          <!-- Current Schedule Preview -->
-          <article>
-            <div>
-              <h2>&#128197; Today's Schedule</h2>
-              <a href="schedule.html">Full Schedule &#10132;</a>
-            </div>
-            <div>
-              <div>
-                <p>Data Structures</p>
-                <p>CS-301 A &bull; Room 204</p>
-              </div>
-              <div>
-                <p>8:00 - 9:00 AM</p>
-                <p>&#10004; Completed</p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>Algorithm Design</p>
-                <p>CS-405 B &bull; Room 312</p>
-              </div>
-              <div>
-                <p>10:00 - 11:00 AM</p>
-                <p>&#9203; In Progress</p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>Database Systems</p>
-                <p>CS-302 A &bull; Lab 101</p>
-              </div>
-              <div>
-                <p>1:00 - 2:00 PM</p>
-                <p>&#128339; Scheduled</p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <p>Software Engineering</p>
-                <p>CS-501 C &bull; Room 418</p>
-              </div>
-              <div>
-                <p>3:00 - 4:30 PM</p>
-                <p>&#128339; Scheduled</p>
-              </div>
-            </div>
-          </article>
 
           <!-- Attendance Summary -->
           <article>

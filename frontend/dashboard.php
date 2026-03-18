@@ -32,7 +32,6 @@
       <nav>
         <div>
           <a href="dashboard.php">&#9776; Dashboard</a>
-          <a href="schedule.html">&#128197; Schedule</a>
           <a href="attendance.html">&#9745; Attendance</a>
           <a href="faculty-details.html">&#128101; Faculty List</a>
           <a href="profile.php">&#128100; Profile</a>
