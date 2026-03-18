@@ -30,9 +30,11 @@ if (isset($_POST['update'])) {
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $designation = $_POST['designation'];
+    $gender = $_POST['gender'];
 
     $update = "UPDATE faculty SET 
                 faculty_name='$name',
+                gender='$gender',
                 faculty_phone='$phone',
                 faculty_address='$address',
                 faculty_designation='$designation'
@@ -43,7 +45,7 @@ if (isset($_POST['update'])) {
             header("refresh:1; url=viewfaculty.php");
         }
         else {
-            header("refresh:1; url=../frontend/dashboard.php");
+            header("refresh:1; url=dashboard.php");
         }
     }
     else {
@@ -125,7 +127,15 @@ input[type="submit"]:hover {
 
     Phone:<br>
     <input type="text" name="phone" value="<?php echo $row['faculty_phone']; ?>"><br><br>
-
+Gender:<br>
+<select name="gender">
+    <option value="Male" <?php if ($row['gender'] == 'Male')
+    echo 'selected'; ?>>Male</option>
+    <option value="Female" <?php if ($row['gender'] == 'Female')
+    echo 'selected'; ?>>Female</option>
+    <option value="Other" <?php if ($row['gender'] == 'Other')
+    echo 'selected'; ?>>Other</option>
+</select><br><br>
     Address:<br>
     <input type="text" name="address" value="<?php echo $row['faculty_address']; ?>"><br><br>
 

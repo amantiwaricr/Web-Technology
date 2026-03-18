@@ -35,25 +35,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect based on role
             if ($user['user_role'] == 'admin') {
-                header("Location: ../frontend/admin-dashboard.html");
+                header("Location: admin-dashboard.html");
                 exit();
             }
             else if ($user['user_role'] == 'user') {
-                header("Location: ../frontend/dashboard.php");
+                header("Location: dashboard.php");
                 exit();
             }
         }
         else {
             // 5. FIX: Pure PHP error message and redirect (No JavaScript)
             echo "<h2>Invalid Password!</h2><p>Redirecting you back to login...</p>";
-            header("refresh:2; url=../frontend/index.html"); // Waits 2 seconds, then redirects
+            header("refresh:2; url=index.html"); // Waits 2 seconds, then redirects
             exit();
         }
     }
     else {
         // User email not found
         echo "<h2>No User Found!</h2><p>Redirecting you back to login...</p>";
-        header("refresh:2; url=../frontend/index.html"); // Waits 2 seconds, then redirects
+        header("refresh:2; url=index.html"); // Waits 2 seconds, then redirects
         exit();
     }
 }

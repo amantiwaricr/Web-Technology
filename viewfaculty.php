@@ -8,7 +8,7 @@ if (isset($_GET['delete_id'])) {
     $result = mysqli_query($conn, "DELETE FROM faculty WHERE id = $id");
     if ($result) {
         header("Location: viewfaculty.php");
-        exit;
+        exit; // stop further rendering so table reloads fresh
     }
     else {
         echo "Error deleting record: " . mysqli_error($conn);
@@ -32,34 +32,25 @@ $result = mysqli_query($conn, $sql);
     <title>Faculty List</title>
     
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #b4d7f7;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+        h1 {
+        margin-top: 40px;
+        color: rgb(7, 7, 90);
         }
 
-        /* NAVBAR */
-        .navbar {
-            width: 100%;
-            background: #5390f9;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #b4d7f7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
         }
 
         .action-link {
             text-decoration: none;
-            color: #0056b3;
+            color: #0056b3; /* Standard link blue */
             font-family: Arial, sans-serif;
         }
-
         .action-link:hover {
             text-decoration: underline;
         }
@@ -67,20 +58,17 @@ $result = mysqli_query($conn, $sql);
 </head>
 
 <body>
-
-<!-- NAVBAR -->
-<div class="navbar">Faculty List</div>
-
-<table border="1" cellpadding="10">
-<tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Address</th>
-    <th>Designation</th>
-    <th>Edit</th>
-    <th>Delete</th>
-</tr>
+    <h1>Faculty List</h1>
+    <table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Designation</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
 
 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 <tr>
@@ -103,9 +91,9 @@ $result = mysqli_query($conn, $sql);
     </td>
 
 </tr>
-<?php } ?>
+<?php
+}?>
 
 </table>
-
 </body>
 </html>
