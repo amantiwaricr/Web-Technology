@@ -11,32 +11,32 @@
     <title>My Profile | Faculty Management System</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header>
-      <div>
-        <div>
-          <div><span>KI</span></div>
-          <span>Faculty Management System</span>
+  <body class="app-page profile-page">
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="brand-block">
+          <div class="brand-logo"><span>KI</span></div>
+          <span class="brand-title">Faculty Management System</span>
         </div>
-        <div>
+        <div class="user-block">
           <span>Welcome, <?php echo $_SESSION['username']; ?></span>
-          <div><span>SM</span></div>
+          <div class="avatar-badge"><span>SM</span></div>
         </div>
       </div>
-      <nav>
-        <div>
+      <nav class="primary-nav">
+        <div class="nav-links">
           <a href="dashboard.php">&#9776; Dashboard</a>
-          <a href="attendance.html">&#9745; Attendance</a>
-          <a href="profile.php">&#128100; Profile</a>
+          <a href="attendence.html">&#9745; Attendance</a>
+          <a class="is-active" href="profile.php">&#128100; Profile</a>
           <a href="index.html">&#10140; Logout</a>
         </div>
       </nav>
     </header>
 
-    <main>
-      <nav>
+    <main class="profile-main">
+      <nav class="breadcrumb-nav">
         <span>
-          <a href="dashboard.html">Home</a>
+          <a href="dashboard.php">Home</a>
           <span>&#9656;</span>
           <span>My Profile</span>
         </span>
@@ -172,11 +172,13 @@
           </article>
         </div>
 
+        <!-- Right Column -->
+        <div>
           <!-- Attendance Summary -->
           <article>
             <div>
               <h2>&#9745; Attendance Summary</h2>
-              <a href="attendance.html">View Details &#10132;</a>
+              <a href="attendence.html">View Details &#10132;</a>
             </div>
             <table>
               <thead>
@@ -278,4 +280,3 @@ Passionate educator and researcher specializing in data structures, algorithms, 
     </footer>
   </body>
 </html>
-

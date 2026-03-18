@@ -1,16 +1,3 @@
-<!-- login->admin->attendance(view attendance) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,27 +10,27 @@
     <title>Attendance | Faculty Management System</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="app-page attendance-page">
     <!-- Top Navigation Bar -->
-    <header>
-      <div>
-        <div>
-          <div>
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="brand-block">
+          <div class="brand-logo">
             <span>KI</span>
           </div>
-          <span>Faculty Management System</span>
+          <span class="brand-title">Faculty Management System</span>
         </div>
-        <div>
+        <div class="user-block">
           <span>Welcome, Dr. Sarah Mitchell</span>
-          <div>
+          <div class="avatar-badge">
             <span>SM</span>
           </div>
         </div>
       </div>
-      <nav>
-        <div>
+      <nav class="primary-nav">
+        <div class="nav-links">
           <a href="dashboard.php">&#9776; Dashboard</a>
-          <a href="attendance.html">&#9745; Attendance</a>
+          <a class="is-active" href="attendence.html">&#9745; Attendance</a>
           <a href="profile.php">&#128100; Profile</a>
           <a href="index.html">&#10140; Logout</a>
         </div>
@@ -51,11 +38,11 @@
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="attendance-main">
       <!-- Breadcrumb -->
-      <nav>
+      <nav class="breadcrumb-nav">
         <span>
-          <a href="dashboard.html">Home</a>
+          <a href="dashboard.php">Home</a>
           <span>&#9656;</span>
           <span>Student Attendance</span>
         </span>
@@ -364,8 +351,8 @@
     <!-- Footer -->
     <footer>
       <p>
-        &copy; 2026 Kathford International &mdash; Faculty Management System. All
-        Rights Reserved.
+        &copy; 2026 Kathford International &mdash; Faculty Management System.
+        All Rights Reserved.
       </p>
       <p>
         Contact IT Support: <span>itsupport@kathford.edu</span> &nbsp;|&nbsp;
@@ -375,4 +362,3 @@
     </footer>
   </body>
 </html>
-

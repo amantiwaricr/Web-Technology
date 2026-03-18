@@ -11,28 +11,28 @@
     <title>Dashboard | Faculty Management System</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="app-page dashboard-page">
     <!-- Top Navigation Bar -->
-    <header>
-      <div>
-        <div>
-          <div>
+    <header class="site-header">
+      <div class="top-bar">
+        <div class="brand-block">
+          <div class="brand-logo">
             <span>KI</span>
           </div>
-          <span>Faculty Management System</span>
+          <span class="brand-title">Faculty Management System</span>
         </div>
-        <div>
+        <div class="user-block">
           <span>Welcome, <?php echo $_SESSION['username']; ?></span>
-          <div>
+          <div class="avatar-badge">
             <span>SM</span>
           </div>
         </div>
       </div>
       <!-- Navigation Menu -->
-      <nav>
-        <div>
-          <a href="dashboard.php">&#9776; Dashboard</a>
-          <a href="attendance.html">&#9745; Attendance</a>
+      <nav class="primary-nav">
+        <div class="nav-links">
+          <a class="is-active" href="dashboard.php">&#9776; Dashboard</a>
+          <a href="attendence.html">&#9745; Attendance</a>
           <a href="profile.php">&#128100; Profile</a>
           <a href="index.html">&#10140; Logout</a>
         </div>
@@ -40,31 +40,32 @@
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="dashboard-main">
       <!-- Breadcrumb -->
-      <nav>
+      <nav class="breadcrumb-nav">
         <span>
-          <a href="dashboard.html">Home</a>
+          <a href="dashboard.php">Home</a>
           <span>&#9656;</span>
           <span>Dashboard</span>
         </span>
       </nav>
 
       <!-- Page Title -->
-      <div>
-        <h1>Dashboard Overview</h1>
-        <p>
+      <div class="page-title-wrap">
+        <div>
+          <h1>Dashboard Overview</h1>
+          <p>
           Welcome back! Here's a summary of your academic activity for Spring
           2026.
-        </p>
+          </p>
+        </div>
+        <a href="../backend/editfaculty.php?id=<?php echo urlencode((string)($_SESSION['faculty_id'] ?? '')); ?>" class="action-link">
+          Edit Profile
+        </a>
       </div>
 
-<?php session_start(); ?>
-<a href="../backend/editfaculty.php?id=<?php echo $_SESSION['faculty_id']; ?>" class="action-link">
-            Edit
-        </a>
       <!-- Stat Cards Row -->
-      <section>
+      <section class="stats-grid">
         <!-- Card 1 - Total Faculty -->
         <article>
           <div>
@@ -115,9 +116,9 @@
       </section>
 
       <!-- Two Column Layout -->
-      <div>
+      <div class="dashboard-layout">
         <!-- Left Column - Recent Activity -->
-        <section>
+        <section class="dashboard-main-column">
           <!-- Today's Schedule Preview -->
           <article>
             <div>
@@ -171,7 +172,7 @@
           <article>
             <div>
               <h2>Recent Attendance Summary</h2>
-              <a href="attendance.html">View All &#10132;</a>
+              <a href="attendence.html">View All &#10132;</a>
             </div>
             <table>
               <thead>
@@ -211,14 +212,14 @@
         </section>
 
         <!-- Right Column - Sidebar Widgets -->
-        <aside>
+        <aside class="dashboard-sidebar">
           <!-- Quick Links -->
           <article>
             <h3>Quick Actions</h3>
-            <a href="attendance.html">&#9745; Mark Attendance</a>
+            <a href="attendence.html">&#9745; Mark Attendance</a>
             <a href="schedule.html">&#128197; View Schedule</a>
             <a href="faculty-details.html">&#128101; Faculty Directory</a>
-            <a href="profile.html">&#128100; Edit Profile</a>
+            <a href="profile.php">&#128100; Edit Profile</a>
           </article>
 
           <!-- Announcements -->
@@ -332,4 +333,3 @@
     </footer>
   </body>
 </html>
-
